@@ -16,16 +16,15 @@ jobs:
           path: reactcode
 
       - name: Change directory
-        run: cd /home/runner/work/reactcode/reactcode
+        run: cd reactcode
 
       - name: Set Up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      - name: Run npm install
+      - name: Install Dependencies
         run: npm install
 
       - name: Build React App
         run: npm run build
-        working-directory: reactcode
