@@ -23,22 +23,3 @@ jobs:
 
       - name: Build React App
         run: npm run build
-
-      - name: Archive Build Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-artifacts
-          path: build
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download Build Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: build-artifacts
-          path: build
-
-      # Add deployment steps here, for example, deploying to a hosting service.
