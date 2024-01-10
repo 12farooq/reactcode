@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          path: reactcode
+
+      - name: Change directory
+        run: cd reactcode
 
       - name: Set Up Node.js
         uses: actions/setup-node@v2
