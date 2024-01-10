@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          path: subdirectory
 
       - name: Set Up Node.js
         uses: actions/setup-node@v2
