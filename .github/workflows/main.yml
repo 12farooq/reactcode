@@ -1,4 +1,4 @@
-name: Build React App
+name: Node.js CI
 
 on:
   push:
@@ -12,30 +12,21 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        with:
-          path: reactcode
 
-      - name: Set Up Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: 14
 
       - name: Install Dependencies
-        working-directory: ./reactcode
-        run: |
-          npm install
-          npm install --save-dev @babel/plugin-proposal-private-property-in-object
+        run: npm install
 
-      - name: Lint and Build React App
-        working-directory: ./reactcode
+      - name: Run Lint
+        run: npm run lint
+      - name: Debug
         run: |
-          npm run lint
-          npm run build
+          ls -R /home/runner/work/reactcode/reactcode
+          cat /home/runner/work/reactcode/reactcode/package.json
 
-      - name: Publish Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-artifact
-          path: ./reactcode/build
 
    
