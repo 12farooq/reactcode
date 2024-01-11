@@ -23,3 +23,6 @@ jobs:
 
     - name: Run Lint
       run: npm run lint
+    - name: List Files
+      run: ls -R /home/runner/work/reactcode/reactcode
+   
