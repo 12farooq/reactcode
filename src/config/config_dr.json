@@ -1,0 +1,42 @@
+{
+  "TranscriptAnalysis": {
+    "Web": {
+      "ModelPath": "This will be the model path on the local environment, this should be an agreed upon path amongst all developers on the local environment"
+    },
+    "AWSCognitoConfig": {
+      "UserPoolId": "us-east-1_KQatR1Pzd",
+      "ClientId": "2ra7dnqop4n4a4oq76gv899psm"
+    },
+    "AWSApiGateway": {
+      "GetAnalysisFilterUrl": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-analysis-filter",
+      "GetAnalysisUrl": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-analysis",
+      "InitiateSearch": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/search-results/deep-search/initiate-search",
+      "GetResults": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/search-results/deep-search/get-results",
+      "GetTopicwiseQuestions": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-analysis-bubbles/get-topicwise-questions",
+      "GetSubtopicwiseQuestions": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-analysis-bubbles/get-analysis-sub-bubbles/get-subtopicwise-questions",
+      "Level3Questions": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-subclustering-data/level3-questions",
+      "Level4Questions": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-subclustering-data/level4-questions",
+      "Level5Questions": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-subclustering-data/level5-questions",
+      "GetAnomaliesFilter": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-anomalies-filter",
+      "GetAnomaliesGroupFilter": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-anomalies-group-filter",
+      "GetAnomalies": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-anomalies",
+      "UpdateContradiction": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/update-contradiction?status=",
+      "GetClusteringJobsList": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-clustering-jobs-list",
+      "GetStatsFilterDataDev": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-stats-filter-data-dev",
+      "GetStatsDev": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-stats-dev",
+      "GetSummary": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-summary",
+      "GetAnalysisBubbles": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-analysis-bubbles",
+      "GetAnalysisSubBubbles": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-analysis-bubbles/get-analysis-sub-bubbles",
+      "Level3Topics": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-subclustering-data/level3-topics",
+      "Level4Topics": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-subclustering-data/level4-topics",
+      "Level5Topics": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-subclustering-data/level5-topics",
+      "QueueClusteringJobs": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/queue-clustering-job",
+      "GetTranscriptsInJobs": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-transcripts-in-jobs",
+      "RemoveClusteringJobs": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/remove-clustering-jobs",
+      "GetUserTable": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-user-table",
+      "DeleteTranscript": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/delete-transcript",
+      "PresignedUrl": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/presigned-url?fileName=",
+      "GetAnomaliesPdfData": "https://ymm0unf3tc.execute-api.us-east-1.amazonaws.com/dev/get-anomalies-pdf-data?t_ids="
+    }
+  }
+}
