@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+      - name: Debug
+        run: |
+          ls -R /home/runner/work/reactcode/reactcode
+          cat /home/runner/work/reactcode/reactcode/package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -27,6 +31,3 @@ jobs:
         run: |
           ls -R /home/runner/work/reactcode/reactcode
           cat /home/runner/work/reactcode/reactcode/package.json
-
-
-   
