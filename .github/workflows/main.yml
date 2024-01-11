@@ -22,8 +22,12 @@ jobs:
 
       - name: Install Dependencies
         working-directory: ./reactcode
-        run: npm install
+        run: |
+          npm install
+          npm install --save-dev @babel/plugin-proposal-private-property-in-object
 
-      - name: Build React App
+      - name: Lint and Build React App
         working-directory: ./reactcode
-        run: npm run build
+        run: |
+          npm run lint
+          npm run build
