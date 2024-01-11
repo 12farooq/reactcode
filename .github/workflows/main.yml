@@ -1,4 +1,4 @@
-name: React Build
+name: React Build and Deploy
 
 on:
   push:
@@ -29,3 +29,48 @@ jobs:
         with:
           name: build-artifacts
           path: ./school/build
+
+  zip_and_deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Archive Repository
+        run: |
+          zip -r ${{ github.workspace }}/archive.zip .
+        working-directory: ${{ github.workspace }}
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}/archive.zip
+
+      - name: SSH Server Deploy
+        uses: kostya-ten/ssh-server-deploy@v4
+        with:
+          host: 202.176.1.150
+          port: 22
+          username: server
+          password: sanjeev123
+          scp_source: ${{ github.workspace }}/archive.zip
+          scp_target: /media/server/data-5121/laye
+
+  unzip_on_server:
+    runs-on: ubuntu-latest
+    needs: zip_and_deploy
+
+    steps:
+      - name: SSH Unzip on Server
+        uses: appleboy/ssh-action@v0.5.1
+        with:
+          host: 202.176.1.150
+          username: server
+          password: sanjeev123
+          script: |
+            cd /media/server/data-5121/laye
+            scp server@202.176.1.150:/media/server/data-5121/laye/archive.zip .
+            unzip -q archive.zip -d /media/server/data-5121/laye
