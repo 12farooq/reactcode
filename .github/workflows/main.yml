@@ -1,4 +1,4 @@
-name: Node.js CI
+name: React Build
 
 on:
   push:
@@ -21,5 +21,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Lint
-        run: npm --prefix ./school run lint
+      - name: Build React App
+        run: npm --prefix ./school run build
+
+      - name: Archive Build Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: ./school/build
