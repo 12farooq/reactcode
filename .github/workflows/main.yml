@@ -23,7 +23,7 @@ jobs:
         uses: kostya-ten/ssh-server-deploy@v4
         with:
           host: 202.176.1.150
-          port: ${{ secrets.SERVER_PORT }}
+          port: 22
           username: server
           password: sanjeev123
           scp_source: ${{ github.workspace }}/archive.zip
