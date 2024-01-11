@@ -1,0 +1,39 @@
+name: Build React App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          path: reactcode
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        working-directory: ./reactcode
+        run: |
+          npm install
+          npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
+      - name: Lint and Build React App
+        working-directory: ./reactcode
+        run: |
+          npm run lint
+          npm run build
+
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifact
+          path: ./reactcode/build
