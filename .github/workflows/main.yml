@@ -65,7 +65,7 @@ jobs:
 
     steps:
       - name: SSH Unzip on Server
-        uses: appleboy/ssh-action@v0.5.1
+        uses: appleboy/ssh-action@v1
         with:
           host: 202.176.1.150
           username: server
